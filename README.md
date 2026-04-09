@@ -1,2 +1,325 @@
-# nsexchange.com
-The Next-Gen Indian Exchange
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>NS Exchange · Coming Soon</title>
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0B0E11;
+    }
+    .bg-grid-pattern {
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: slowDrift 20s linear infinite;
+    }
+    @keyframes slowDrift {
+      0% { background-position: 0 0; }
+      100% { background-position: 40px 40px; }
+    }
+    .candle-glow {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.03;
+      background: repeating-linear-gradient(45deg, #FCD535 0px, #FCD535 2px, transparent 2px, transparent 10px);
+      animation: candlePulse 8s ease-in-out infinite;
+    }
+    @keyframes candlePulse {
+      0%,100% { opacity: 0.02; }
+      50% { opacity: 0.05; }
+    }
+    .card-premium {
+      background: #1E2329;
+      border: 1px solid #2a313c;
+      backdrop-filter: blur(2px);
+      transition: transform 0.2s ease, border-color 0.2s;
+    }
+    .card-premium:hover {
+      border-color: #FCD53540;
+    }
+    .countdown-box {
+      background: #1E2329;
+      border: 1px solid #2a313c;
+      border-radius: 16px;
+      padding: 0.75rem 1.25rem;
+      min-width: 80px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+    .btn-accent {
+      background: #FCD535;
+      color: #0B0E11;
+      font-weight: 700;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-accent:hover {
+      background: #e6c02a;
+      transform: scale(1.02);
+      box-shadow: 0 0 15px #FCD53560;
+    }
+    .input-dark {
+      background: #0B0E11;
+      border: 1px solid #2a313c;
+      color: white;
+    }
+    .input-dark:focus {
+      border-color: #FCD535;
+      outline: none;
+      box-shadow: 0 0 0 2px #FCD53530;
+    }
+    .footer-link {
+      color: #848e9c;
+      transition: color 0.2s;
+    }
+    .footer-link:hover {
+      color: #FCD535;
+    }
+    @media (max-width: 640px) {
+      .countdown-box {
+        min-width: 60px;
+        padding: 0.5rem 0.5rem;
+      }
+    }
+    /* Right-side logo styling */
+    .header-logo-mark {
+      background: linear-gradient(145deg, #1E2329, #0f1216);
+      border: 1px solid #FCD53540;
+      box-shadow: 0 0 12px #FCD53520;
+    }
+  </style>
+</head>
+<body class="relative text-gray-100 antialiased overflow-x-hidden">
+
+  <!-- Animated background layers -->
+  <div class="fixed inset-0 bg-grid-pattern z-0"></div>
+  <div class="candle-glow z-0"></div>
+
+  <div class="relative z-10 flex flex-col min-h-screen">
+
+    <!-- Header: Left logo, right logo mark (no text badge) -->
+    <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between border-b border-gray-800/50">
+      <!-- LEFT: NS Exchange Logo -->
+      <div class="flex items-center gap-2">
+        <div class="h-9 w-9 rounded-lg bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center shadow-lg">
+          <i class="fas fa-chart-line text-gray-900 text-xl"></i>
+        </div>
+        <span class="text-2xl font-bold tracking-tight text-white">NS <span class="text-[#FCD535]">Exchange</span></span>
+      </div>
+      
+      <!-- RIGHT: Clean logo mark (replaces compliance text) -->
+      <div class="header-logo-mark flex items-center justify-center w-11 h-11 rounded-xl">
+        <div class="flex flex-col items-center -space-y-1">
+          <span class="text-[#FCD535] font-black text-xl leading-5">NS</span>
+          <i class="fas fa-shield-hal text-[#FCD535] text-[10px]"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="flex-1 flex flex-col justify-center items-center text-center px-4 sm:px-6 py-10 max-w-7xl mx-auto w-full">
+      <div class="mb-6 inline-flex items-center gap-2 bg-[#1E2329]/80 backdrop-blur-sm px-4 py-2 rounded-full border border-yellow-600/30">
+        <span class="relative flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+        </span>
+        <span class="text-sm font-medium text-gray-300">Institutional Launch · Q4 2026</span>
+      </div>
+
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+        The Next-Gen <br class="sm:hidden"/> <span class="text-[#FCD535]">Indian Exchange</span>
+      </h1>
+      <p class="mt-5 text-lg sm:text-xl text-gray-300 max-w-3xl">
+        FIU-Compliant. Institution-Grade Security. Binance-Level Liquidity.
+      </p>
+
+      <!-- Countdown Timer -->
+      <div class="mt-10 flex flex-wrap justify-center gap-3 sm:gap-5">
+        <div class="countdown-box">
+          <span id="days" class="text-4xl sm:text-5xl font-bold text-white">00</span>
+          <span class="block text-xs uppercase tracking-wider text-gray-400 mt-1">Days</span>
+        </div>
+        <div class="countdown-box">
+          <span id="hours" class="text-4xl sm:text-5xl font-bold text-white">00</span>
+          <span class="block text-xs uppercase tracking-wider text-gray-400 mt-1">Hours</span>
+        </div>
+        <div class="countdown-box">
+          <span id="minutes" class="text-4xl sm:text-5xl font-bold text-white">00</span>
+          <span class="block text-xs uppercase tracking-wider text-gray-400 mt-1">Mins</span>
+        </div>
+        <div class="countdown-box">
+          <span id="seconds" class="text-4xl sm:text-5xl font-bold text-white">00</span>
+          <span class="block text-xs uppercase tracking-wider text-gray-400 mt-1">Secs</span>
+        </div>
+      </div>
+      <p class="text-sm text-gray-400 mt-3">Launching December 31, 2026 · 23:59 IST</p>
+
+      <!-- Email Signup Form -->
+      <div class="mt-10 w-full max-w-md mx-auto">
+        <form id="earlyAccessForm" class="flex flex-col sm:flex-row gap-3">
+          <input type="email" id="emailInput" placeholder="Your email address" required 
+                 class="input-dark flex-1 px-5 py-3.5 rounded-xl text-base placeholder-gray-500 focus:ring-0 transition">
+          <button type="submit" class="btn-accent px-6 py-3.5 rounded-xl text-base whitespace-nowrap shadow-lg">
+            Get Early Access
+          </button>
+        </form>
+        <div id="formFeedback" class="text-sm text-green-400 mt-2 h-5"></div>
+        <p class="text-xs text-gray-400 mt-3 flex items-center justify-center gap-1">
+          <i class="fas fa-rupee-sign text-gray-500"></i> 
+          <span>₹1 Bank Verification Ready. KYC with Live Selfie Required.</span>
+        </p>
+      </div>
+
+      <!-- Features Grid (3 columns) -->
+      <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        <div class="card-premium rounded-2xl p-6 text-left backdrop-blur-sm bg-opacity-90">
+          <div class="w-12 h-12 rounded-xl bg-[#FCD535]/10 flex items-center justify-center mb-5">
+            <i class="fas fa-passport text-2xl text-[#FCD535]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">FIU-IND Compliant</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Real-time geo-tagged KYC, live selfie verification, and Travel Rule ready. Fully aligned with PMLA 2026 mandates.
+          </p>
+        </div>
+        <div class="card-premium rounded-2xl p-6 text-left backdrop-blur-sm bg-opacity-90">
+          <div class="w-12 h-12 rounded-xl bg-[#FCD535]/10 flex items-center justify-center mb-5">
+            <i class="fas fa-chart-bar text-2xl text-[#FCD535]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Spot & Futures</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Deep liquidity matching engine, sub‑millisecond order execution, USDT perpetuals with up to 125x leverage.
+          </p>
+        </div>
+        <div class="card-premium rounded-2xl p-6 text-left backdrop-blur-sm bg-opacity-90">
+          <div class="w-12 h-12 rounded-xl bg-[#FCD535]/10 flex items-center justify-center mb-5">
+            <i class="fas fa-building-columns text-2xl text-[#FCD535]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">INR On/Off Ramp</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Instant deposits & withdrawals via IMPS, NEFT, UPI. Bank-grade security and 24/7 fiat liquidity.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800/50 mt-10 py-8 px-4 sm:px-6">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+        <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+          <a href="#" class="footer-link flex items-center gap-1"><i class="fas fa-shield text-xs"></i> FIU Compliance Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link flex items-center gap-1"><i class="fas fa-file-certificate"></i> CERT-In Audit Report</a>
+          <a href="#" class="footer-link">Privacy</a>
+        </div>
+        <div class="text-gray-500 flex items-center gap-2">
+          <i class="far fa-copyright"></i> 
+          <span>NS Exchange 2026 · All rights reserved</span>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto mt-6 text-xs text-gray-600 flex justify-center gap-4 overflow-hidden whitespace-nowrap">
+        <span>BTC/INR 5,210,000 ▲2.4%</span> <span class="text-gray-700">|</span>
+        <span>ETH/INR 298,500 ▲1.8%</span> <span class="text-gray-700">|</span>
+        <span>SOL/INR 18,250 ▼0.5%</span> <span class="text-gray-700">|</span>
+        <span>FIU-IND Registration No. pending (ready)</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function() {
+      "use strict";
+
+      // COUNTDOWN to Dec 31, 2026 23:59:59 IST (UTC+5:30)
+      const targetDate = new Date(Date.UTC(2026, 11, 31, 18, 29, 59));
+
+      function updateCountdown() {
+        const now = new Date();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+          document.getElementById('days').textContent = '00';
+          document.getElementById('hours').textContent = '00';
+          document.getElementById('minutes').textContent = '00';
+          document.getElementById('seconds').textContent = '00';
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const minutes = Math.floor((diff % 3600000) / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
+
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // EMAIL SIGNUP + FIU-AUDIT LOG
+      const form = document.getElementById('earlyAccessForm');
+      const emailInput = document.getElementById('emailInput');
+      const feedbackDiv = document.getElementById('formFeedback');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailRegex.test(email)) {
+          feedbackDiv.textContent = '⚠ Please enter a valid email address.';
+          feedbackDiv.classList.remove('text-green-400');
+          feedbackDiv.classList.add('text-red-400');
+          return;
+        }
+        
+        feedbackDiv.textContent = '✓ You’re on the list! Early access details will be sent.';
+        feedbackDiv.classList.remove('text-red-400');
+        feedbackDiv.classList.add('text-green-400');
+        
+        console.log(`[FIU-AUDIT] Early Access Signup: ${email}`);
+        
+        emailInput.value = '';
+        setTimeout(() => { feedbackDiv.textContent = ''; }, 5000);
+      });
+
+      emailInput.addEventListener('input', function() {
+        if (feedbackDiv.classList.contains('text-red-400')) {
+          feedbackDiv.textContent = '';
+          feedbackDiv.classList.remove('text-red-400');
+        }
+      });
+
+      console.log('[FIU-AUDIT] NS Exchange Landing — Compliance ready. Header logo mark active.');
+    })();
+  </script>
+
+  <style>
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0 30px #0B0E11 inset !important;
+      -webkit-text-fill-color: white !important;
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0B0E11; }
+    ::-webkit-scrollbar-thumb { background: #2a313c; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FCD535; }
+  </style>
+</body>
+</html>
